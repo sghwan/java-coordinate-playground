@@ -24,3 +24,12 @@ git checkout main // 기본 브랜치가 main인 경우
 git checkout -b 브랜치이름
 ex) git checkout -b apply-feedback
 ```
+
+---
+4. 연습1 - 연료주입
+- 렌터카 운영사에서 차를 빌려주기 전에 고객으로 부터 대략적인 주행거리를 확인한 후 
+- 차량 연비에 따른 주입할 연료량에 대한 보고서 작성
+- 차량별 연비
+    * Sonata : 10km/리터
+    * Avante : 15km/리터
+    * K5 : 13km/리터
