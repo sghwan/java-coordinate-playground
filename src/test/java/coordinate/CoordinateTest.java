@@ -7,13 +7,13 @@ import static org.assertj.core.api.Assertions.*;
 public class CoordinateTest {
     @Test
     void x_throwException() {
-        assertThatThrownBy(() -> new X(25))
+        assertThatThrownBy(() -> new Point(25))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     void y_throwException() {
-        assertThatThrownBy(() -> new Y(-1))
+        assertThatThrownBy(() -> new Point(-1))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
@@ -24,7 +24,7 @@ public class CoordinateTest {
         int x = Integer.parseInt(positions[0]);
         int y = Integer.parseInt(positions[1]);
 
-        Coordinate point = new Coordinate(new X(x), new Y(y));
+        Coordinate point = new Coordinate(new Point(x), new Point(y));
 
         assertThat(point).isInstanceOf(Coordinate.class);
     }
@@ -36,7 +36,7 @@ public class CoordinateTest {
         int x = Integer.parseInt(positions[0]);
         int y = Integer.parseInt(positions[1]);
 
-        assertThatThrownBy(() -> new Coordinate(new X(x), new Y(y)))
+        assertThatThrownBy(() -> new Coordinate(new Point(x), new Point(y)))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 }

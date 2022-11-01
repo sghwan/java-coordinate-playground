@@ -1,18 +1,18 @@
 package coordinate;
 
-public class Y {
+public class Point {
     private final int position;
     private static final int MAX_VALUE = 24;
     private static final int MIN_VALUE = 0;
 
-    public Y(int position) {
+    public Point(int position) {
         if (position > MAX_VALUE || position < MIN_VALUE)
             throw new IllegalArgumentException("좌표 값은 최대 24까지만 입력할 수 있습니다.");
         this.position = position;
     }
 
-    public double calculate(Y y) {
-        return Math.pow(position - y.getPosition(), 2);
+    public double calculate(Point point) {
+        return Math.pow(position - point.getPosition(), 2);
     }
 
     private int getPosition() {

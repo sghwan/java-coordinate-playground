@@ -1,10 +1,10 @@
 package coordinate;
 
 public class Coordinate {
-    private final X x;
-    private final Y y;
+    private final Point x;
+    private final Point y;
 
-    public Coordinate(X x, Y y) {
+    public Coordinate(Point x, Point y) {
         this.x = x;
         this.y = y;
     }
@@ -13,11 +13,11 @@ public class Coordinate {
         return Math.sqrt(x.calculate(point2.getX()) + y.calculate(point2.getY()));
     }
 
-    private Y getY() {
+    private Point getY() {
         return y;
     }
 
-    private X getX() {
+    private Point getX() {
         return x;
     }
 }
