@@ -10,4 +10,12 @@ public class X {
             throw new IllegalArgumentException("좌표 값은 최대 24까지만 입력할 수 있습니다.");
         this.position = position;
     }
+
+    public double calculate(X x) {
+        return Math.pow(position - x.getPosition(), 2);
+    }
+
+    private int getPosition() {
+        return this.position;
+    }
 }
