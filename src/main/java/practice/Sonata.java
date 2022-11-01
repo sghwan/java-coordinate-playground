@@ -1,16 +1,20 @@
 package practice;
 
 public class Sonata extends Car {
-    private final int distance;
-    private static final double FUEL_EFFICIENCY = 10.0;
+    private final int tripDistance;
 
-    public Sonata(int distance) {
-        this.distance = distance;
+    public Sonata(int tripDistance) {
+        this.tripDistance = tripDistance;
     }
 
     @Override
-    public double calculateFuelAmount() {
-        return distance / FUEL_EFFICIENCY;
+    public double getDistancePerLiter() {
+        return 10.0;
+    }
+
+    @Override
+    public double getTripDistance() {
+        return tripDistance;
     }
 
     @Override

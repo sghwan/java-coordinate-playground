@@ -1,6 +1,13 @@
 package practice;
 
 public abstract class Car {
-    abstract double calculateFuelAmount();
+    abstract double getDistancePerLiter();
+
+    abstract double getTripDistance();
+
     abstract String getName();
+
+    double getChargeQuantity() {
+        return getTripDistance() / getDistancePerLiter();
+    }
 }

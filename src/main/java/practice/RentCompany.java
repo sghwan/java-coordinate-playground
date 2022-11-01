@@ -7,12 +7,12 @@ public class RentCompany {
     private final List<Car> cars;
     private static final String NEWLINE = System.getProperty("line.separator");
 
-    private RentCompany() {
-        cars = new ArrayList<>();
+    private RentCompany(List<Car> cars) {
+        this.cars = cars;
     }
 
     public static RentCompany create() {
-        return new RentCompany();
+        return new RentCompany(new ArrayList<>());
     }
 
     public void addCar(Car car) {
@@ -21,7 +21,7 @@ public class RentCompany {
 
     public String generateReport() {
         StringBuilder sb = new StringBuilder();
-        cars.forEach(car -> sb.append(car.getName()).append(" : ").append((int) car.calculateFuelAmount()).append("리터").append(NEWLINE));
+        cars.forEach(car -> sb.append(car.getName()).append(" : ").append((int) car.getChargeQuantity()).append("리터").append(NEWLINE));
         return sb.toString();
     }
 }

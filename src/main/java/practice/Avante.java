@@ -1,16 +1,20 @@
 package practice;
 
 public class Avante extends Car {
-    private final int distance;
-    private static final double FUEL_EFFICIENCY = 15.0;
+    private final int tripDistance;
 
-    public Avante(int distance) {
-        this.distance = distance;
+    public Avante(int tripDistance) {
+        this.tripDistance = tripDistance;
     }
 
     @Override
-    public double calculateFuelAmount() {
-        return distance / FUEL_EFFICIENCY;
+    public double getDistancePerLiter() {
+        return 15.0;
+    }
+
+    @Override
+    public double getTripDistance() {
+        return tripDistance;
     }
 
     @Override

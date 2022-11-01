@@ -33,3 +33,4 @@ ex) git checkout -b apply-feedback
     * Sonata : 10km/리터
     * Avante : 15km/리터
     * K5 : 13km/리터
+- 상속과 추상 클래스를 활용하여 if/else 예약어를 사용하지 말고 구현

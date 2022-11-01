@@ -1,16 +1,20 @@
 package practice;
 
 public class K5 extends Car {
-    private final int distance;
-    private static final double FUEL_EFFICIENCY = 13.0;
+    private final int tripDistance;
 
-    public K5(int distance) {
-        this.distance = distance;
+    public K5(int tripDistance) {
+        this.tripDistance = tripDistance;
     }
 
     @Override
-    public double calculateFuelAmount() {
-        return distance / FUEL_EFFICIENCY;
+    public double getDistancePerLiter() {
+        return 13.0;
+    }
+
+    @Override
+    public double getTripDistance() {
+        return tripDistance;
     }
 
     @Override
