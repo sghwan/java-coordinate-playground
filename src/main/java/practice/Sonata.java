@@ -1,6 +1,6 @@
 package practice;
 
-public class Sonata extends Car {
+public class Sonata implements Car {
     private final int tripDistance;
 
     public Sonata(int tripDistance) {

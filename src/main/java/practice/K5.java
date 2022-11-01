@@ -1,6 +1,6 @@
 package practice;
 
-public class K5 extends Car {
+public class K5 implements Car {
     private final int tripDistance;
 
     public K5(int tripDistance) {

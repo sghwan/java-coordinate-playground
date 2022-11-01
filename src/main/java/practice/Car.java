@@ -1,13 +1,13 @@
 package practice;
 
-public abstract class Car {
+public interface Car {
     abstract double getDistancePerLiter();
 
     abstract double getTripDistance();
 
     abstract String getName();
 
-    double getChargeQuantity() {
+    default double getChargeQuantity() {
         return getTripDistance() / getDistancePerLiter();
     }
 }
