@@ -1,11 +1,11 @@
 package practice;
 
 public interface Car {
-    abstract double getDistancePerLiter();
+    double getDistancePerLiter();
 
-    abstract double getTripDistance();
+    double getTripDistance();
 
-    abstract String getName();
+    String getName();
 
     default double getChargeQuantity() {
         return getTripDistance() / getDistancePerLiter();
