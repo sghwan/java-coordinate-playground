@@ -1,5 +1,7 @@
 package coordinate;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import utils.CoordinateParser;
 
@@ -9,19 +11,34 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.*;
 
 public class RectangleTest {
+    CoordinateParser coordinateParser;
+
+    @BeforeEach
+    void setUp() {
+        coordinateParser = new CoordinateParser();
+    }
+
     @Test
     void calculate() {
-        CoordinateParser coordinateParser = new CoordinateParser();
-        List<String> parsedCoordinates = coordinateParser.parseCoordinate("(10,10)-(22,10)-(10,18)-(22,18)");
-        List<Coordinate> coordinates = new ArrayList<>();
+        //given
+        List<Coordinate> coordinates = coordinateParser.parse("(10,10)-(22,10)-(10,18)-(22,18)");
 
-        for (String parsedCoordinate : parsedCoordinates) {
-            List<Integer> positions = coordinateParser.parsePosition(parsedCoordinate);
-            coordinates.add(new Coordinate(new Point(positions.get(0)), new Point(positions.get(1))));
-        }
-
+        //when
         Rectangle rectangle = new Rectangle(coordinates);
 
+        //then
         assertThat((int) rectangle.calculate()).isEqualTo(96);
+    }
+
+    @Test
+    void checkRectangle() {
+        List<Coordinate> coordinates = coordinateParser.parse("(10,12)-(22,10)-(10,18)-(22,18)");
+
+        assertThatThrownBy(() -> new Rectangle(coordinates)).isInstanceOf(NullPointerException.class);
+    }
+
+    @AfterEach
+    void tearDown() {
+        coordinateParser = null;
     }
 }

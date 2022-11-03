@@ -18,4 +18,8 @@ public class Point {
     private int getPosition() {
         return this.position;
     }
+
+    public boolean isSame(Point point) {
+        return position == point.getPosition();
+    }
 }

@@ -13,11 +13,19 @@ public class Coordinate {
         return Math.sqrt(x.calculate(point2.getX()) + y.calculate(point2.getY()));
     }
 
-    private Point getY() {
-        return y;
+    public boolean isSameXaxis(Coordinate coordinate) {
+        return x.isSame(coordinate.getX());
+    }
+
+    public boolean isSameYaxis(Coordinate coordinate) {
+        return y.isSame(coordinate.getY());
     }
 
     private Point getX() {
         return x;
+    }
+
+    private Point getY() {
+        return y;
     }
 }
