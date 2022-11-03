@@ -28,4 +28,8 @@ public class Coordinate {
     private Point getY() {
         return y;
     }
+
+    public boolean isRightAngle(Coordinate coordinate2, Coordinate coordinate3) {
+        return this.isSameXaxis(coordinate2) && this.isSameYaxis(coordinate3);
+    }
 }

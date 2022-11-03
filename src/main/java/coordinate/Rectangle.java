@@ -38,11 +38,9 @@ public class Rectangle implements Shape {
         Coordinate coordinate3 = coordinates.get(2);
         Coordinate coordinate4 = coordinates.get(3);
 
-        boolean judge1 = coordinate1.isSameXaxis(coordinate2);
-        boolean judge2 = coordinate1.isSameYaxis(coordinate3);
-        boolean judge3 = coordinate4.isSameXaxis(coordinate3);
-        boolean judge4 = coordinate4.isSameYaxis(coordinate2);
+        boolean judge1 = coordinate1.isRightAngle(coordinate2, coordinate3);
+        boolean judge2 = coordinate4.isRightAngle(coordinate3, coordinate2);
 
-        return judge1 && judge2 && judge3 && judge4;
+        return judge1 && judge2;
     }
 }
