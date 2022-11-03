@@ -8,12 +8,11 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class LineTest {
+public class RectangleTest {
     @Test
-    void calculateLineDistance() {
-        //given
+    void calculate() {
         CoordinateParser coordinateParser = new CoordinateParser();
-        List<String> parsedCoordinates = coordinateParser.parseCoordinate("(1,2)-(4,3)");
+        List<String> parsedCoordinates = coordinateParser.parseCoordinate("(10,10)-(22,10)-(10,18)-(22,18)");
         List<Coordinate> coordinates = new ArrayList<>();
 
         for (String parsedCoordinate : parsedCoordinates) {
@@ -21,10 +20,8 @@ public class LineTest {
             coordinates.add(new Coordinate(new Point(positions.get(0)), new Point(positions.get(1))));
         }
 
-        //when
-        Line line = new Line(coordinates);
+        Rectangle rectangle = new Rectangle(coordinates);
 
-        //then
-        assertThat(line.calculate()).isEqualTo(3.162, offset(0.00099));
+        assertThat((int) rectangle.calculate()).isEqualTo(96);
     }
 }
