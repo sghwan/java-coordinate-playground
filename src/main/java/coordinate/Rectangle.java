@@ -29,10 +29,6 @@ public class Rectangle implements Shape {
         if (coordinates.size() != COORDINATE_COUNT)
             return false;
 
-        return getJudge(coordinates);
-    }
-
-    private boolean getJudge(List<Coordinate> coordinates) {
         Coordinate coordinate1 = coordinates.get(0);
         Coordinate coordinate2 = coordinates.get(1);
         Coordinate coordinate3 = coordinates.get(2);
