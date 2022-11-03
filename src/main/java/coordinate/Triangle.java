@@ -29,20 +29,6 @@ public class Triangle implements Shape {
 
     @Override
     public boolean isRight(List<Coordinate> coordinates) {
-        if (coordinates.size() != COORDINATE_COUNT)
-            return false;
-
-        Coordinate coordinate1 = coordinates.get(0);
-        Coordinate coordinate2 = coordinates.get(1);
-        Coordinate coordinate3 = coordinates.get(2);
-
-        double sideLength1 = coordinate1.calculate(coordinate2);
-        double sideLength2 = coordinate1.calculate(coordinate3);
-        double sideLength3 = coordinate2.calculate(coordinate3);
-
-        double max = Math.max(sideLength1, sideLength2);
-        max = Math.max(max, sideLength3);
-
-        return sideLength1 + sideLength2 + sideLength3 - max > max;
+        return coordinates.size() == COORDINATE_COUNT;
     }
 }
