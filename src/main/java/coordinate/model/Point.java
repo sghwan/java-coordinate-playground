@@ -15,4 +15,12 @@ public class Point {
     private boolean validateRange(int value) {
         return value < MAX_VALUE;
     }
+
+    public int getX() {
+        return this.x;
+    }
+
+    public int getY() {
+        return this.y;
+    }
 }
