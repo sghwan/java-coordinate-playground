@@ -1,19 +1,27 @@
 package coordinate.model;
 
+import java.util.Objects;
+
 public class Point {
-    private static final int MAX_VALUE = 25;
+    private static final String ERROR_OUT_OF_POINT_RANGE = "잘못된 범위 입니다. 정수 범위는 " + Point.MIN_VALUE + " ~ " + Point.MAX_VALUE + "값으로 입력해 주세요.";
+    private static final int MAX_VALUE = 24;
+    private static final int MIN_VALUE = 1;
     private final int x;
     private final int y;
 
     public Point(int x, int y) {
-        if (!validateRange(x) || !validateRange(y))
-            throw new IllegalArgumentException("좌표값의 범위는 24이하 입니다.");
+        checkRangeOf(x, y);
         this.x = x;
         this.y = y;
     }
 
-    private boolean validateRange(int value) {
-        return value < MAX_VALUE;
+    private void checkRangeOf(int x, int y) {
+        if (exceedRange(x) || exceedRange(y))
+            throw new IllegalArgumentException(ERROR_OUT_OF_POINT_RANGE);
+    }
+
+    private boolean exceedRange(int value) {
+        return value > MAX_VALUE || value < MIN_VALUE;
     }
 
     public double calculateDistance(Point point) {
@@ -22,5 +30,26 @@ public class Point {
 
     private double squareDifference(int firstValue, int secondValue) {
         return Math.pow(firstValue - secondValue, 2);
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Point point = (Point) o;
+        return x == point.x && y == point.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }
