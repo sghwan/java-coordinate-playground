@@ -11,11 +11,11 @@ import static org.assertj.core.api.Assertions.*;
 
 public class LineTest {
     @Test
-    void calculate() {
+    void area() {
         List<Point> points = new ArrayList<>(Arrays.asList(new Point(1,2), new Point(3, 4)));
 
         Line line = new Line();
-        double distance = line.calculate(points);
+        double distance = line.area(points);
 
         assertThat(distance).isEqualTo(2.828, Offset.offset(0.00099));
     }

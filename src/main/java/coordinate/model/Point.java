@@ -16,11 +16,11 @@ public class Point {
         return value < MAX_VALUE;
     }
 
-    public int getX() {
-        return this.x;
+    public double calculateDistance(Point point) {
+        return Math.sqrt(squareDifference(this.x, point.x) + squareDifference(this.y, point.y));
     }
 
-    public int getY() {
-        return this.y;
+    private double squareDifference(int firstValue, int secondValue) {
+        return Math.pow(firstValue - secondValue, 2);
     }
 }
