@@ -32,6 +32,13 @@ public class Point {
         return Math.pow(firstValue - secondValue, 2);
     }
 
+    public double calculateSlope(Point point) {
+        if (this.x == point.x) {
+            return Double.MAX_VALUE;
+        }
+        return Math.abs((double) (this.y - point.y) / (this.x - point.x));
+    }
+
     public int getX() {
         return x;
     }
@@ -52,4 +59,5 @@ public class Point {
     public int hashCode() {
         return Objects.hash(x, y);
     }
+
 }
