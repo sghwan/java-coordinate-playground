@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class Point {
     private static final String ERROR_OUT_OF_POINT_RANGE = "잘못된 범위 입니다. 정수 범위는 " + Point.MIN_VALUE + " ~ " + Point.MAX_VALUE + "값으로 입력해 주세요.";
-    private static final int MAX_VALUE = 24;
-    private static final int MIN_VALUE = 1;
+    public static final int MAX_VALUE = 24;
+    public static final int MIN_VALUE = 1;
     private final int x;
     private final int y;
 
@@ -60,4 +60,7 @@ public class Point {
         return Objects.hash(x, y);
     }
 
+    public boolean isSame(int x, int y) {
+        return this.x == x && this.y == y;
+    }
 }
